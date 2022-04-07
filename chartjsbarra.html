@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Chart JS</h3>
+    <br>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js">
+
+    </script>
+
+
+
+    <canvas id="myChart" width="1600" height="900"></canvas><br>
+</body>
+</html>
+<script>
+    // Our labels along the x-axis
+var horario = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho'];
+// For drawing the lines
+var temperatura = [22,24,27,23,20,18];
+var umidade = [90,89,93,87,88,89,82];
+
+var ctx = document.getElementById("myChart");
+var myChart = new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: horario,
+    datasets: [
+      { 
+        data: temperatura,
+        label: "Temperatura Média",
+        backgroundColor: "red",
+        
+      },
+      {
+          data: umidade,
+          label: "Umidade Média",
+          backgroundColor: "blue"
+      }
+    ]
+  }
+});
+</script>
